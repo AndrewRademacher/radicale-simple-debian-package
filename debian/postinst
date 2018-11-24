@@ -1,0 +1,22 @@
+#!/bin/bash
+
+python3 -m pip install --upgrade radicale
+python3 -m pip install --upgrade radicale[bcrypt]
+
+if id "radicale" >/dev/null 2>&1; then
+    echo "radicale user exists"
+else
+    echo "radicale user does not exist, creating"
+    useradd radicale
+fi
+
+mkdir -p /var/radicale/collections
+touch /var/radicale/users
+chown -R radicale:radicale /var/radicale
+
+systemctl enable radicale
+systemctl daemon-reload
+systemctl restart radicale
+
+ln -s /etc/radicale/radicale.nginx /etc/nginx/sites-enabled/radicale.nginx
+systemctl restart nginx

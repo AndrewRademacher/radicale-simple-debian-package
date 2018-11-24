@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm /etc/nginx/sites-enabled/radicale.nginx
+
+systemctl restart nginx
+
+systemctl stop radicale
+systemctl disable radicale
+
