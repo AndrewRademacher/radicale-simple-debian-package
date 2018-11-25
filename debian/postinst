@@ -20,3 +20,4 @@ systemctl restart radicale
 
 ln -s /etc/radicale/radicale.nginx /etc/nginx/sites-enabled/radicale.nginx
 systemctl restart nginx
+

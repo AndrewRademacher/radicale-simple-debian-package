@@ -7,3 +7,5 @@ systemctl restart nginx
 systemctl stop radicale
 systemctl disable radicale
 
+python3 -m pip uninstall -y radicale
+

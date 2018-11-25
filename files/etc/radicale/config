@@ -5,7 +5,7 @@ htpasswd_encryption = bcrypt
 delay = 1
 
 [server]
-hosts = 0.0.0.0:5232
+hosts = 127.0.0.1:5232
 max_connections = 10
 max_content_length = 10000000
 timeout = 30
