@@ -42,6 +42,9 @@ server {
 	listen [::]:443 ssl;
 
 	server_name radicale.server.com;
+
+	ssl_certificate /etc/letsencrypt/live/server.com/cert.pem;
+	ssl_certificate_key /etc/letsencrypt/live/server.com/privkey.pem;
 	
 	location / {
 		proxy_pass http://127.0.0.1:5232/;
