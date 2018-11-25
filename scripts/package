@@ -1,0 +1,10 @@
+#!/bin/bash
+
+./scripts/clean
+
+mkdir -p build/pkg
+cp -R files/* build/pkg
+mkdir -p build/pkg/DEBIAN
+cp -R debian/* build/pkg/DEBIAN/
+
+dpkg -b build/pkg/ build/radicale-simple_1.0.deb
